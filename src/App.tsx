@@ -1,4 +1,5 @@
-import Navbar from './components/ui/Navbar';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 import { AppRoutes } from './utils/AppRoutes';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
         <>
             <Navbar />
             <AppRoutes />
+            <Footer />
         </>
     );
 }

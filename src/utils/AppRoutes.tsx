@@ -1,5 +1,5 @@
 import { Routes } from 'react-router-dom';
-import { generateRoutes } from './generateRouter';
+import { generateRoutes } from './generateRoutes';
 import { NAV_LINKS } from '../data/links';
 
 export function AppRoutes() {

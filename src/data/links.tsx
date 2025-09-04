@@ -17,19 +17,17 @@ import ICDKakarvitta from '../pages/services/TerminalManagement/ICDKakarvitta';
 import ICDTatopani from '../pages/services/TerminalManagement/ICDTatopani';
 import ICPBiratnagar from '../pages/services/TerminalManagement/ICPBiratnagar';
 import Tarrif from '../pages/Tarrif';
+import type { FooterLinks, NavLink } from '../types/links';
 
-import type { NavLinks } from '../types/NavLinks';
-
-export const NAV_LINKS: NavLinks[] = [
+export const NAV_LINKS: NavLink[] = [
     {
-        label: 'home',
+        label: 'Home',
         path: '/',
         element: <Home />
     },
 
     {
-        label: 'aboutus',
-        path: '/about',
+        label: 'About Us',
         children: [
             {
                 label: 'Board of Director',
@@ -97,12 +95,6 @@ export const NAV_LINKS: NavLinks[] = [
     },
 
     {
-        label: 'Tarrif',
-        path: '/tarrif',
-        element: <Tarrif />
-    },
-
-    {
         label: 'Associates',
         children: [
             {
@@ -139,5 +131,59 @@ export const NAV_LINKS: NavLinks[] = [
         label: 'CSR',
         path: '/csr',
         element: <CSR />
+    },
+
+    {
+        label: 'Tarrif',
+        path: '/tarrif',
+        element: <Tarrif />
     }
 ];
+
+export const FOOTER_LINKS: FooterLinks = {
+    usefulLinks: [
+        {
+            label: 'Department Of Customs',
+            path: 'https://www.customs.gov.np/en/'
+        },
+        { label: 'NITDB Board', path: 'http://www.nitdb.org/' },
+        { label: 'FNCCI', path: 'http://www.fncci.org/' },
+        {
+            label: 'Indian Embassy Nepal',
+            path: 'https://www.indembkathmandu.gov.in/'
+        },
+        { label: 'Check Email', path: '#' }
+    ],
+    quickLinks: [
+        {
+            label: 'Management Team',
+            path: '/management-team',
+            element: <ManagementTeam />
+        },
+        {
+            label: 'Biratnagar ICP',
+            path: '/icp-biratnagar',
+            element: <ICPBiratnagar />
+        },
+        {
+            label: 'Kakarbhitta ICD',
+            path: '/icd-kakarvitta',
+            element: <ICDKakarvitta />
+        },
+        { label: 'Tarrif', path: '/tarrif', element: <Tarrif /> },
+        {
+            label: 'News & Events',
+            path: '/newsandevents',
+            element: <NewsAndEvent />
+        }
+    ],
+    jointVentures: [
+        {
+            label: 'Track your cargo',
+            path: 'https://track.thegkgroup.com/web-gk/',
+            imgSrc: '/assets/images/partnership.png',
+            imgAlt: 'Track your cargo',
+            imgHeight: 20
+        }
+    ]
+};
