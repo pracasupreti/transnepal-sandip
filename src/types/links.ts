@@ -3,6 +3,7 @@ export type NavLink = {
     path?: string;
     children?: NavLink[];
     element?: React.ReactNode;
+    type?: string;
 };
 
 export type FooterLink = NavLink & {

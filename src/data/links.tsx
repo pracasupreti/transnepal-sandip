@@ -12,10 +12,13 @@ import CSR from '../pages/CSR';
 import Gallery from '../pages/Gallery';
 import Home from '../pages/Home';
 import NewsAndEvent from '../pages/NewsAndEvent';
+import AgencyServices from '../pages/services/AgencyServices';
+import RentalService from '../pages/services/RentalService';
 import ICDChobhar from '../pages/services/TerminalManagement/ICDChobhar';
 import ICDKakarvitta from '../pages/services/TerminalManagement/ICDKakarvitta';
 import ICDTatopani from '../pages/services/TerminalManagement/ICDTatopani';
 import ICPBiratnagar from '../pages/services/TerminalManagement/ICPBiratnagar';
+import Transportation from '../pages/services/Transportation';
 import Tarrif from '../pages/Tarrif';
 import type { FooterLinks, NavLink } from '../types/links';
 
@@ -72,24 +75,45 @@ export const NAV_LINKS: NavLink[] = [
         label: 'Services',
         children: [
             {
-                label: 'ICP Biratnagar',
-                path: '/icp-biratnagar',
-                element: <ICPBiratnagar />
+                label: 'Terminal Management',
+                type: 'group',
+                children: [
+                    {
+                        label: 'ICP Biratnagar',
+                        path: '/icp-biratnagar',
+                        element: <ICPBiratnagar />
+                    },
+                    {
+                        label: 'ICD Kakarvitta',
+                        path: '/icd-kakarvitta',
+                        element: <ICDKakarvitta />
+                    },
+                    {
+                        label: 'ICD Tatopani',
+                        path: '/icd-tatopani',
+                        element: <ICDTatopani />
+                    },
+                    {
+                        label: 'ICD Chobhar',
+                        path: '/icd-chobhar',
+                        element: <ICDChobhar />
+                    }
+                ]
             },
             {
-                label: 'ICD Kakarvitta',
-                path: '/icd-kakarvitta',
-                element: <ICDKakarvitta />
+                label: 'Agency Services',
+                path: '/agency-services',
+                element: <AgencyServices />
             },
             {
-                label: 'ICD Tatopani',
-                path: '/icd-tatopani',
-                element: <ICDTatopani />
+                label: 'Rental Services',
+                path: '/rental-services',
+                element: <RentalService />
             },
             {
-                label: 'ICD Chobhar',
-                path: '/icd-chobhar',
-                element: <ICDChobhar />
+                label: 'Transportation',
+                path: '/transportation',
+                element: <Transportation />
             }
         ]
     },
@@ -122,7 +146,7 @@ export const NAV_LINKS: NavLink[] = [
     },
 
     {
-        label: 'News and Events',
+        label: 'News & Events',
         path: '/newandevents',
         element: <NewsAndEvent />
     },
