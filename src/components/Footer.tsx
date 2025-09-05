@@ -128,41 +128,18 @@ function FooterContact() {
             aria-label="Connect With Us"
             className="mt-6 flex flex-col items-start"
         >
-            <h1 className={headerStyle}>Contact Us</h1>
-            <ul className="grid grid-cols-2 gap-y-2">
-                <li className={`${linkList} ml-auto flex items-center`}>
-                    <MdOutlineMailOutline
-                        className="mr-2 inline-block text-white"
-                        size={20}
-                    />
-                    <a
-                        href={`mailto:${CONTACT.contact.email}`}
-                        className="hover:underline"
+            <ul className="grid grid-cols-2">
+                {CONTACT.contact.map((contact, index) => (
+                    <li
+                        key={index}
+                        className={`${linkList} flex w-max items-center ${index % 2 !== 0 ? 'ml-10' : ''}`}
                     >
-                        {CONTACT.contact.email}
-                    </a>
-                </li>
-                <li className={`${linkList} flex items-center`}>
-                    <BsFillTelephoneFill
-                        className="mr-2 inline-block text-white"
-                        size={20}
-                    />
-                    <a
-                        href={`tel:${CONTACT.contact.telephone}`}
-                        className="hover:underline"
-                    >
-                        {CONTACT.contact.telephone}
-                    </a>
-                </li>
-                <li className={`${linkList} flex items-center`}>
-                    <FaFax className="mr-2 inline-block text-white" size={20} />
-                    <a
-                        href={`tel:${CONTACT.contact.fax}`}
-                        className="ml-2 hover:underline"
-                    >
-                        {CONTACT.contact.fax}
-                    </a>
-                </li>
+                        <span className="mr-2 text-white">{contact.icon}</span>
+                        <a href={contact.url} className="hover:underline">
+                            {contact.info}
+                        </a>
+                    </li>
+                ))}
             </ul>
         </section>
     );

@@ -1,11 +1,17 @@
 import { CiLinkedin } from 'react-icons/ci';
-import { FaFacebook, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaFax, FaYoutube } from 'react-icons/fa';
 import React from 'react';
+import { MdOutlineMailOutline } from 'react-icons/md';
+import { BsFillTelephoneFill } from 'react-icons/bs';
 
 type SocialMedia = {
     name: string;
     url: string;
     icon: React.ReactNode;
+};
+
+type Contact = SocialMedia & {
+    info: string;
 };
 
 type CONTACT = {
@@ -15,18 +21,11 @@ type CONTACT = {
         city: string;
         country: string;
     };
-    contact: {
-        telephone: string;
-        telephoneUrl: string;
-        fax: string;
-        faxUrl: string;
-        email: string;
-        emailUrl: string;
-    };
+    contact: Contact[];
     workingHours: {
         weekdays: string;
     };
-    socialMedia: SocialMedia[]; // <--- This must be an array
+    socialMedia: SocialMedia[];
 };
 
 export const CONTACT: CONTACT = {
@@ -37,14 +36,26 @@ export const CONTACT: CONTACT = {
         city: 'Biratnagar-05',
         country: 'Nepal'
     },
-    contact: {
-        telephone: '+977 21 501441',
-        telephoneUrl: 'tel:+97721501441',
-        fax: '+977 21 501470',
-        faxUrl: 'tel:+97721501470',
-        email: 'transnepal_brt@transnepaldryport.com',
-        emailUrl: 'mailto:transnepal_brt@transnepaldryport.com'
-    },
+    contact: [
+        {
+            name: 'email',
+            info: 'transnepal_brt@transnepaldryport.com',
+            url: 'mailto:transnepal_brt@transnepaldryport.com',
+            icon: <MdOutlineMailOutline />
+        },
+        {
+            name: 'telephone',
+            info: '+977 21 501441',
+            url: 'tel:+97721501441',
+            icon: <BsFillTelephoneFill />
+        },
+        {
+            name: 'fax',
+            info: '+977 21501470',
+            url: 'tel:+97721501470',
+            icon: <FaFax />
+        }
+    ],
     workingHours: {
         weekdays: '10:00 AM - 6:00 PM'
     },
