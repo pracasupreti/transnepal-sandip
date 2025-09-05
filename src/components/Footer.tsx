@@ -75,6 +75,116 @@ function FooterLinks({ links, newTab = false }: FooterLinksProps) {
     );
 }
 
+function FooterSocialMedia() {
+    return (
+        <section className={linkList} aria-label="social media">
+            <SocialMediaIcons socialMedia={CONTACT.socialMedia} />
+        </section>
+    );
+}
+
+function FooterLogoSection() {
+    return (
+        <section
+            aria-label="Footer Logo"
+            className="relative flex flex-col items-center"
+        >
+            <h1 className={`${headerStyle} mb-6`}>Join Venture With</h1>
+            <div className="relative">
+                <img
+                    src={eclipse}
+                    alt="Eclipse"
+                    className="h-56 w-56 rounded-full bg-white"
+                />
+                <img
+                    src={footerLogo}
+                    alt="Footer Logo"
+                    className="absolute h-32 w-56"
+                    style={{
+                        top: '50%',
+                        transform: 'translateY(-50%)'
+                    }}
+                />
+            </div>
+        </section>
+    );
+}
+
+function FooterUsefulLinks() {
+    return (
+        <section
+            aria-label="Useful Links"
+            className="flex flex-col items-start"
+        >
+            <h1 className={`${headerStyle} mb-5`}>Useful Links</h1>
+            <FooterLinks links={FOOTER_LINKS.usefulLinks} newTab />
+        </section>
+    );
+}
+
+function FooterContact() {
+    return (
+        <section
+            aria-label="Connect With Us"
+            className="mt-6 flex flex-col items-start"
+        >
+            <h1 className={headerStyle}>Contact Us</h1>
+            <ul className="grid grid-cols-2 gap-y-2">
+                <li className={`${linkList} ml-auto flex items-center`}>
+                    <MdOutlineMailOutline
+                        className="mr-2 inline-block text-white"
+                        size={20}
+                    />
+                    <a
+                        href={`mailto:${CONTACT.contact.email}`}
+                        className="hover:underline"
+                    >
+                        {CONTACT.contact.email}
+                    </a>
+                </li>
+                <li className={`${linkList} flex items-center`}>
+                    <BsFillTelephoneFill
+                        className="mr-2 inline-block text-white"
+                        size={20}
+                    />
+                    <a
+                        href={`tel:${CONTACT.contact.telephone}`}
+                        className="hover:underline"
+                    >
+                        {CONTACT.contact.telephone}
+                    </a>
+                </li>
+                <li className={`${linkList} flex items-center`}>
+                    <FaFax className="mr-2 inline-block text-white" size={20} />
+                    <a
+                        href={`tel:${CONTACT.contact.fax}`}
+                        className="ml-2 hover:underline"
+                    >
+                        {CONTACT.contact.fax}
+                    </a>
+                </li>
+            </ul>
+        </section>
+    );
+}
+
+function FooterCopyright() {
+    return (
+        <section
+            className="flex flex-col justify-between gap-4 md:flex-row"
+            aria-label="Copyright"
+        >
+            <p className={copyrightNoticeParagraph}>
+                All rights Reserved | Copyright © 2024 Trans Nepal Freight
+                Services Pvt. Ltd.
+            </p>
+            <p className={copyrightNoticeParagraph}>
+                Technology Partner | Pracas Infosys
+            </p>
+        </section>
+    );
+}
+
 export default function Footer() {
     return (
         <footer
@@ -83,44 +193,13 @@ export default function Footer() {
         >
             <div className="mx-auto max-w-7xl">
                 <div className="mb-4 flex items-start justify-end">
-                    <section className={linkList} aria-label="social media">
-                        <SocialMediaIcons socialMedia={CONTACT.socialMedia} />
-                    </section>
+                    <FooterSocialMedia />
                 </div>
 
                 <div className="mb-5 flex flex-wrap justify-between gap-8">
-                    <section
-                        aria-label="Footer Logo"
-                        className="relative flex flex-col items-center"
-                    >
-                        <h1 className={`${headerStyle} mb-6`}>
-                            Join Venture With
-                        </h1>
-                        <div className="relative">
-                            <img
-                                src={eclipse}
-                                alt="Eclipse"
-                                className="h-56 w-56 rounded-full bg-white"
-                            />
-                            <img
-                                src={footerLogo}
-                                alt="Footer Logo"
-                                className="absolute h-32 w-56"
-                                style={{
-                                    top: '50%',
-                                    transform: 'translateY(-50%)'
-                                }}
-                            />
-                        </div>
-                    </section>
+                    <FooterLogoSection />
 
-                    <section
-                        aria-label="Useful Links"
-                        className="flex flex-col items-start"
-                    >
-                        <h1 className={`${headerStyle} mb-5`}>Useful Links</h1>
-                        <FooterLinks links={FOOTER_LINKS.usefulLinks} newTab />
-                    </section>
+                    <FooterUsefulLinks />
 
                     <div className="flex max-w-[560px] flex-col">
                         <p className="h-40 justify-start text-justify font-['Inter'] text-sm leading-relaxed font-normal text-white/80 capitalize">
@@ -134,69 +213,13 @@ export default function Footer() {
                             the Government of Nepal.
                         </p>
 
-                        <section
-                            aria-label="Connect With Us"
-                            className="mt-6 flex flex-col items-start"
-                        >
-                            <h1 className={headerStyle}>Contact Us</h1>
-                            <ul className="grid grid-cols-2 gap-y-2">
-                                <li
-                                    className={`${linkList} ml-auto flex items-center`}
-                                >
-                                    <MdOutlineMailOutline
-                                        className="mr-2 inline-block text-white"
-                                        size={20}
-                                    />
-                                    <a
-                                        href={`mailto:${CONTACT.contact.email}`}
-                                        className="hover:underline"
-                                    >
-                                        {CONTACT.contact.email}
-                                    </a>
-                                </li>
-                                <li className={`${linkList} flex items-center`}>
-                                    <BsFillTelephoneFill
-                                        className="mr-2 inline-block text-white"
-                                        size={20}
-                                    />
-                                    <a
-                                        href={`tel:${CONTACT.contact.telephone}`}
-                                        className="hover:underline"
-                                    >
-                                        {CONTACT.contact.telephone}
-                                    </a>
-                                </li>
-                                <li className={`${linkList} flex items-center`}>
-                                    <FaFax
-                                        className="mr-2 inline-block text-white"
-                                        size={20}
-                                    />
-                                    <a
-                                        href={`tel:${CONTACT.contact.fax}`}
-                                        className="ml-2 hover:underline"
-                                    >
-                                        {CONTACT.contact.fax}
-                                    </a>
-                                </li>
-                            </ul>
-                        </section>
+                        <FooterContact />
                     </div>
                 </div>
 
                 <div className="mt-3 w-full border-b-2 border-gray-300" />
 
-                <section
-                    className="flex flex-col justify-between gap-4 md:flex-row"
-                    aria-label="Copyright"
-                >
-                    <p className={copyrightNoticeParagraph}>
-                        All rights Reserved | Copyright © 2024 Trans Nepal
-                        Freight Services Pvt. Ltd.
-                    </p>
-                    <p className={copyrightNoticeParagraph}>
-                        Technology Partner | Pracas Infosys
-                    </p>
-                </section>
+                <FooterCopyright />
             </div>
         </footer>
     );
