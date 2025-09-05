@@ -14,7 +14,7 @@ export default function SocialMediaIcons({
     socialMedia
 }: SocialMediaIconsProps) {
     return (
-        <div className="mt-6 flex items-center justify-center space-x-6">
+        <div className="flex items-center justify-center space-x-6">
             {socialMedia.map(({ name, url, icon }) => (
                 <a
                     key={name}
